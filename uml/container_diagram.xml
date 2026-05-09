@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Container Diagram" id="0">
+    <mxGraphModel dx="1319" dy="813" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Customer" vertex="1">
+          <mxGeometry height="80" width="40" x="60" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Hotel Staff" vertex="1">
+          <mxGeometry height="80" width="40" x="60" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;dashed=1;" value="" vertex="1">
+          <mxGeometry height="420" width="720" x="210" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="Web Application (Frontend UI)" vertex="1">
+          <mxGeometry height="80" width="220" x="40" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" value="Backend API (Business Logic)" vertex="1">
+          <mxGeometry height="100" width="240" x="375" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="4" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Database (Rooms, Bookings, Payments, Guests)" vertex="1">
+          <mxGeometry height="100" width="220" x="300" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="12" edge="1" parent="4" source="5" style="endArrow=block;html=1;" target="6" value="HTTP/REST API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" edge="1" parent="4" source="6" style="endArrow=block;html=1;" target="7" value="Reads/Writes (SQL)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jXZxa4Pb_1kObyzVa-tz-15" parent="4" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Hotel Reservation System" vertex="1">
+          <mxGeometry height="30" width="190" x="265" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Payment Gateway" vertex="1">
+          <mxGeometry height="80" width="180" x="960" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Email Service" vertex="1">
+          <mxGeometry height="80" width="180" x="960" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="10" edge="1" parent="1" source="2" style="endArrow=block;html=1;" target="5" value="Uses (search, book, pay)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" edge="1" parent="1" source="3" style="endArrow=block;html=1;" target="5" value="Manages system">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" edge="1" parent="1" source="6" style="endArrow=block;html=1;" target="8" value="Processes payments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="6" style="endArrow=block;html=1;" target="9" value="Sends confirmations">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

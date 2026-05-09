@@ -1,0 +1,703 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="GLYIbxwKJDNWM0ZZzKCn" name="Page-1">
+    <mxGraphModel dx="6769" dy="2323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3000" pageHeight="2200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;" value="Hotel Reservation System — Class Diagram" vertex="1">
+          <mxGeometry height="40" width="2800" x="-470" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_bg" parent="1" style="fillColor=#f5f5f5;strokeColor=#666666;rounded=1;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="260" width="380" x="50" y="1760" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_title" parent="1" style="text;html=1;fontStyle=1;fontSize=13;align=left;" value="Legend" vertex="1">
+          <mxGeometry height="22" width="100" x="115" y="1765" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_inh_l" edge="1" parent="1" style="endArrow=block;endFill=0;endSize=12;strokeColor=#444444;strokeWidth=2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1805" as="sourcePoint" />
+            <mxPoint x="190" y="1805" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_inh_t" parent="1" style="text;html=1;fontSize=11;" value="Generalization (Inheritance)" vertex="1">
+          <mxGeometry height="20" width="270" x="198" y="1796" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_com_l" edge="1" parent="1" style="endArrow=block;endFill=1;startArrow=diamondThin;startFill=1;startSize=12;endSize=8;strokeColor=#444444;strokeWidth=2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1840" as="sourcePoint" />
+            <mxPoint x="190" y="1840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_com_t" parent="1" style="text;html=1;fontSize=11;" value="Composition (filled diamond)" vertex="1">
+          <mxGeometry height="20" width="270" x="198" y="1831" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_agg_l" edge="1" parent="1" style="endArrow=block;endFill=0;startArrow=diamondThin;startFill=0;startSize=12;endSize=8;strokeColor=#444444;strokeWidth=2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1875" as="sourcePoint" />
+            <mxPoint x="190" y="1875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_agg_t" parent="1" style="text;html=1;fontSize=11;" value="Aggregation (open diamond)" vertex="1">
+          <mxGeometry height="20" width="270" x="198" y="1866" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_ass_l" edge="1" parent="1" style="endArrow=open;endFill=0;strokeColor=#444444;strokeWidth=2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1910" as="sourcePoint" />
+            <mxPoint x="190" y="1910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_ass_t" parent="1" style="text;html=1;fontSize=11;" value="Association (directed)" vertex="1">
+          <mxGeometry height="20" width="270" x="198" y="1901" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_dep_l" edge="1" parent="1" style="endArrow=open;endFill=0;dashed=1;strokeColor=#888888;strokeWidth=1.5;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="1945" as="sourcePoint" />
+            <mxPoint x="190" y="1945" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_dep_t" parent="1" style="text;html=1;fontSize=11;" value="Dependency / uses" vertex="1">
+          <mxGeometry height="20" width="270" x="198" y="1936" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_vis" parent="1" style="text;html=1;fontSize=10;fontStyle=2;align=left;" value="+ public   - private   # protected   ~ package" vertex="1">
+          <mxGeometry height="20" width="360" x="115" y="1990" as="geometry" />
+        </mxCell>
+        <mxCell id="Person" parent="1" style="swimlane;fontStyle=1;align=center;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" value="«abstract»&#xa;Person" vertex="1">
+          <mxGeometry height="210" width="280" x="60" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Person_attr" parent="Person" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- personId: String&#xa;- firstName: String&#xa;- lastName: String&#xa;- email: String&#xa;- phone: String&#xa;- dateOfBirth: Date" vertex="1">
+          <mxGeometry height="100" width="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Person_div1" parent="Person" style="line;strokeColor=#6c8ebf;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Person_ops" parent="Person" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ getFullName(): String&#xa;+ getContactInfo(): String&#xa;+ updateProfile(info): void" vertex="1">
+          <mxGeometry height="65" width="280" y="141" as="geometry" />
+        </mxCell>
+        <mxCell id="Guest" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="Guest" vertex="1">
+          <mxGeometry height="220" width="280" x="390" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Guest_attr" parent="Guest" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- guestId: String&#xa;- loyaltyPoints: int&#xa;- loyaltyTier: enum {SILVER,GOLD,PLATINUM}&#xa;- preferredRoomType: String&#xa;- idDocumentNo: String" vertex="1">
+          <mxGeometry height="100" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Guest_div" parent="Guest" style="line;strokeColor=#6c8ebf;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Guest_ops" parent="Guest" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ makeReservation(room, dates): Reservation&#xa;+ cancelReservation(resId): boolean&#xa;+ viewReservationHistory(): List&#xa;+ earnLoyaltyPoints(amount): void" vertex="1">
+          <mxGeometry height="85" width="280" y="131" as="geometry" />
+        </mxCell>
+        <mxCell id="Staff" parent="1" style="swimlane;fontStyle=1;align=center;startSize=40;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" value="«abstract»&#xa;Staff" vertex="1">
+          <mxGeometry height="220" width="280" x="730" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Staff_attr" parent="Staff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- staffId: String&#xa;- department: String&#xa;- salary: double&#xa;- hireDate: Date&#xa;- employmentStatus: enum {ACTIVE,ON_LEAVE,TERMINATED}" vertex="1">
+          <mxGeometry height="95" width="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Staff_div" parent="Staff" style="line;strokeColor=#d6b656;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="Staff_ops" parent="Staff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ checkIn(reservation): void&#xa;+ checkOut(reservation): void&#xa;+ generateReport(): Report&#xa;+ assignRoom(guest, room): void" vertex="1">
+          <mxGeometry height="80" width="280" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Admin" vertex="1">
+          <mxGeometry height="200" width="280" x="1070" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin_attr" parent="Admin" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- adminLevel: int&#xa;- accessPermissions: List&lt;String&gt;&#xa;- lastLoginDate: DateTime" vertex="1">
+          <mxGeometry height="65" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin_div" parent="Admin" style="line;strokeColor=#d6b656;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin_ops" parent="Admin" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ manageRooms(): void&#xa;+ manageStaff(): void&#xa;+ viewAllReservations(): List&#xa;+ configureSystem(settings): void&#xa;+ generateFinancialReport(): Report" vertex="1">
+          <mxGeometry height="100" width="280" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="FrontDesk" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="FrontDeskStaff" vertex="1">
+          <mxGeometry height="200" width="280" x="1430" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FD_attr" parent="FrontDesk" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- shiftStart: Time&#xa;- shiftEnd: Time&#xa;- currentDesk: int" vertex="1">
+          <mxGeometry height="60" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FD_div" parent="FrontDesk" style="line;strokeColor=#d6b656;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FD_ops" parent="FrontDesk" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ processCheckIn(res): void&#xa;+ processCheckOut(res): Invoice&#xa;+ handleGuestRequest(req): void&#xa;+ issueDoorKey(roomNo): String&#xa;+ collectPayment(inv): void" vertex="1">
+          <mxGeometry height="105" width="280" y="91" as="geometry" />
+        </mxCell>
+        <mxCell id="HKStaff" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="HousekeepingStaff" vertex="1">
+          <mxGeometry height="190" width="280" x="1790" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HK_attr" parent="HKStaff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- zone: String&#xa;- tasksCompleted: int&#xa;- currentTaskId: String" vertex="1">
+          <mxGeometry height="60" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HK_div" parent="HKStaff" style="line;strokeColor=#d6b656;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="HK_ops" parent="HKStaff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ cleanRoom(roomNo): void&#xa;+ reportIssue(roomNo, desc): void&#xa;+ markRoomReady(roomNo): void&#xa;+ requestSupplies(items): void" vertex="1">
+          <mxGeometry height="95" width="280" y="91" as="geometry" />
+        </mxCell>
+        <mxCell id="Hotel" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Hotel" vertex="1">
+          <mxGeometry height="220" width="280" x="60" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="Hotel_attr" parent="Hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- hotelId: String&#xa;- name: String&#xa;- starRating: int&#xa;- totalRooms: int&#xa;- checkInTime: Time&#xa;- checkOutTime: Time" vertex="1">
+          <mxGeometry height="105" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Hotel_div" parent="Hotel" style="line;strokeColor=#82b366;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="Hotel_ops" parent="Hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ getAvailableRooms(dates): List&#xa;+ addRoom(room): void&#xa;+ removeRoom(roomId): void&#xa;+ getOccupancyRate(): double" vertex="1">
+          <mxGeometry height="80" width="280" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="Address" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" value="Address" vertex="1">
+          <mxGeometry height="200" width="280" x="390" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="Address_attr" parent="Address" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- street: String&#xa;- city: String&#xa;- state: String&#xa;- country: String&#xa;- postalCode: String&#xa;- latitude: double&#xa;- longitude: double" vertex="1">
+          <mxGeometry height="120" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Address_div" parent="Address" style="line;strokeColor=#666666;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Address_ops" parent="Address" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ getFormattedAddress(): String&#xa;+ validate(): boolean" vertex="1">
+          <mxGeometry height="45" width="280" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="Room" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Room" vertex="1">
+          <mxGeometry height="240" width="280" x="730" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="Room_attr" parent="Room" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- roomId: String&#xa;- roomNumber: String&#xa;- floor: int&#xa;- status: enum {AVAILABLE,OCCUPIED,MAINTENANCE,CLEANING}&#xa;- isSmokingAllowed: boolean&#xa;- maxOccupancy: int" vertex="1">
+          <mxGeometry height="115" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Room_div" parent="Room" style="line;strokeColor=#82b366;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="Room_ops" parent="Room" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ isAvailable(checkIn, checkOut): boolean&#xa;+ setStatus(status): void&#xa;+ getStatus(): RoomStatus&#xa;+ getPricePerNight(): double&#xa;+ getRoomType(): RoomType" vertex="1">
+          <mxGeometry height="90" width="280" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="RoomType" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="RoomType" vertex="1">
+          <mxGeometry height="220" width="280" x="1070" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="RT_attr" parent="RoomType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- typeId: String&#xa;- typeName: enum {SINGLE,DOUBLE,SUITE,DELUXE,PENTHOUSE}&#xa;- basePrice: double&#xa;- description: String&#xa;- amenities: List&lt;String&gt;&#xa;- bedType: String" vertex="1">
+          <mxGeometry height="115" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RT_div" parent="RoomType" style="line;strokeColor=#82b366;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="RT_ops" parent="RoomType" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ getPrice(season): double&#xa;+ getAmenityList(): List&#xa;+ updateBasePrice(price): void" vertex="1">
+          <mxGeometry height="70" width="280" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="Reservation" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="Reservation" vertex="1">
+          <mxGeometry height="250" width="300" x="1430" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="Res_attr" parent="Reservation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- reservationId: String&#xa;- bookingRef: String&#xa;- checkInDate: Date&#xa;- checkOutDate: Date&#xa;- numGuests: int&#xa;- status: enum {PENDING,CONFIRMED,CHECKED_IN,CHECKED_OUT,CANCELLED}&#xa;- createdAt: DateTime&#xa;- specialRequests: String" vertex="1">
+          <mxGeometry height="140" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Res_div" parent="Reservation" style="line;strokeColor=#9673a6;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="300" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Res_ops" parent="Reservation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ confirm(): void&#xa;+ cancel(): boolean&#xa;+ getTotalNights(): int&#xa;+ calculateTotalCost(): double&#xa;+ extendStay(newDate): void" vertex="1">
+          <mxGeometry height="75" width="300" y="171" as="geometry" />
+        </mxCell>
+        <mxCell id="Payment" parent="1" style="swimlane;fontStyle=1;align=center;startSize=40;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="«abstract»&#xa;Payment" vertex="1">
+          <mxGeometry height="210" width="280" x="60" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="Pay_attr" parent="Payment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- paymentId: String&#xa;- amount: double&#xa;- currency: String&#xa;- paymentDate: DateTime&#xa;- status: enum {PENDING,SUCCESS,FAILED,REFUNDED}&#xa;- transactionId: String" vertex="1">
+          <mxGeometry height="110" width="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Pay_div" parent="Payment" style="line;strokeColor=#b85450;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Pay_ops" parent="Payment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ processPayment(): boolean&#xa;+ refund(amount): boolean&#xa;+ getReceipt(): String" vertex="1">
+          <mxGeometry height="55" width="280" y="151" as="geometry" />
+        </mxCell>
+        <mxCell id="Invoice" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="Invoice" vertex="1">
+          <mxGeometry height="230" width="280" x="490" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="Inv_attr" parent="Invoice" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- invoiceId: String&#xa;- invoiceNo: String&#xa;- issueDate: DateTime&#xa;- dueDate: Date&#xa;- subtotal: double&#xa;- taxAmount: double&#xa;- discountAmount: double&#xa;- totalAmount: double&#xa;- isPaid: boolean" vertex="1">
+          <mxGeometry height="150" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Inv_div" parent="Invoice" style="line;strokeColor=#9673a6;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="Inv_ops" parent="Invoice" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ generatePDF(): File&#xa;+ applyDiscount(pct): void&#xa;+ calculateTax(rate): double&#xa;+ markAsPaid(): void" vertex="1">
+          <mxGeometry height="45" width="280" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="Notification" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" value="Notification" vertex="1">
+          <mxGeometry height="220" width="280" x="920" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="Notif_attr" parent="Notification" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- notifId: String&#xa;- type: enum {EMAIL,SMS,PUSH}&#xa;- recipient: String&#xa;- subject: String&#xa;- body: String&#xa;- sentAt: DateTime&#xa;- isDelivered: boolean" vertex="1">
+          <mxGeometry height="130" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Notif_div" parent="Notification" style="line;strokeColor=#666666;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Notif_ops" parent="Notification" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ send(): boolean&#xa;+ retry(): void&#xa;+ getDeliveryStatus(): String" vertex="1">
+          <mxGeometry height="55" width="280" y="161" as="geometry" />
+        </mxCell>
+        <mxCell id="Task" parent="1" style="swimlane;fontStyle=1;align=center;startSize=40;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="«abstract»&#xa;Task" vertex="1">
+          <mxGeometry height="210" width="280" x="1330" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="Task_attr" parent="Task" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- taskId: String&#xa;- description: String&#xa;- priority: enum {LOW,MEDIUM,HIGH,URGENT}&#xa;- status: enum {PENDING,IN_PROGRESS,DONE}&#xa;- assignedTo: String&#xa;- dueDateTime: DateTime" vertex="1">
+          <mxGeometry height="115" width="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Task_div" parent="Task" style="line;strokeColor=#d79b00;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="Task_ops" parent="Task" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ assign(staffId): void&#xa;+ markComplete(): void&#xa;+ escalate(): void" vertex="1">
+          <mxGeometry height="50" width="280" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="CreditCard" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="CreditCardPayment" vertex="1">
+          <mxGeometry height="200" width="280" x="60" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="CC_attr" parent="CreditCard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- cardNumber: String&#xa;- cardHolderName: String&#xa;- expiryDate: String&#xa;- cvv: String&#xa;- cardType: enum {VISA,MASTERCARD,AMEX}" vertex="1">
+          <mxGeometry height="100" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CC_div" parent="CreditCard" style="line;strokeColor=#b85450;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="CC_ops" parent="CreditCard" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ processPayment(): boolean&#xa;+ validateCard(): boolean&#xa;+ tokenize(): String" vertex="1">
+          <mxGeometry height="65" width="280" y="131" as="geometry" />
+        </mxCell>
+        <mxCell id="CashPay" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="CashPayment" vertex="1">
+          <mxGeometry height="180" width="280" x="390" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="Cash_attr" parent="CashPay" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- cashReceived: double&#xa;- changeGiven: double&#xa;- receivedBy: String" vertex="1">
+          <mxGeometry height="65" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Cash_div" parent="CashPay" style="line;strokeColor=#b85450;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="Cash_ops" parent="CashPay" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ processPayment(): boolean&#xa;+ calculateChange(): double&#xa;+ printReceipt(): void" vertex="1">
+          <mxGeometry height="80" width="280" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="OnlinePay" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="OnlinePayment" vertex="1">
+          <mxGeometry height="190" width="280" x="720" y="1480" as="geometry">
+            <mxRectangle height="30" width="120" x="720" y="1480" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OP_attr" parent="OnlinePay" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- gatewayName: String&#xa;- gatewayTransactionId: String&#xa;- authCode: String&#xa;- paymentToken: String" vertex="1">
+          <mxGeometry height="80" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OP_div" parent="OnlinePay" style="line;strokeColor=#b85450;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="OP_ops" parent="OnlinePay" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ processPayment(): boolean&#xa;+ initiateRefund(): boolean&#xa;+ verifyWebhook(payload): boolean" vertex="1">
+          <mxGeometry height="75" width="280" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="HKTask" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="HousekeepingTask" vertex="1">
+          <mxGeometry height="190" width="280" x="1180" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="HKT_attr" parent="HKTask" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- taskType: enum {CLEANING,TURNDOWN,LINEN}&#xa;- roomNo: String&#xa;- suppliesNeeded: List&lt;String&gt;&#xa;- estimatedDuration: int" vertex="1">
+          <mxGeometry height="90" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HKT_div" parent="HKTask" style="line;strokeColor=#d79b00;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="HKT_ops" parent="HKTask" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ markComplete(): void&#xa;+ requestSupplies(): void&#xa;+ flagForInspection(): void" vertex="1">
+          <mxGeometry height="65" width="280" y="121" as="geometry" />
+        </mxCell>
+        <mxCell id="MaintTask" parent="1" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="MaintenanceTask" vertex="1">
+          <mxGeometry height="190" width="280" x="1620" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="MT_attr" parent="MaintTask" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="- issueType: enum {PLUMBING,ELECTRICAL,HVAC,STRUCTURAL}&#xa;- severity: enum {MINOR,MAJOR,CRITICAL}&#xa;- technicianId: String&#xa;- partsRequired: List&lt;String&gt;" vertex="1">
+          <mxGeometry height="100" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MT_div" parent="MaintTask" style="line;strokeColor=#d79b00;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="1" width="280" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="MT_ops" parent="MaintTask" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;fontSize=11;" value="+ markComplete(): void&#xa;+ orderParts(parts): void&#xa;+ escalateToCritical(): void" vertex="1">
+          <mxGeometry height="55" width="280" y="131" as="geometry" />
+        </mxCell>
+        <mxCell id="inh_Guest_Person" edge="1" parent="1" source="Guest" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#6c8ebf;strokeWidth=2;" target="Person" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="75" />
+              <mxPoint x="200" y="75" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_Guest_Person_lbl" parent="1" style="text;html=1;fontSize=9;fontStyle=2;strokeColor=none;fillColor=none;" value="extends" vertex="1">
+          <mxGeometry height="16" width="60" x="310" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="inh_Staff_Person" edge="1" parent="1" source="Staff" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#6c8ebf;strokeWidth=2;" target="Person" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="75" />
+              <mxPoint x="200" y="75" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_Admin_Staff" edge="1" parent="1" source="Admin" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#d6b656;strokeWidth=2;" target="Staff" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1210" y="75" />
+              <mxPoint x="870" y="75" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_Admin_Staff_lbl" parent="1" style="text;html=1;fontSize=9;fontStyle=2;strokeColor=none;fillColor=none;" value="extends" vertex="1">
+          <mxGeometry height="16" width="60" x="995" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="inh_FD_Staff" edge="1" parent="1" source="FrontDesk" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#d6b656;strokeWidth=2;" target="Staff" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1570" y="75" />
+              <mxPoint x="870" y="75" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_HK_Staff" edge="1" parent="1" source="HKStaff" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#d6b656;strokeWidth=2;" target="Staff" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1930" y="75" />
+              <mxPoint x="870" y="75" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_CC_Pay" edge="1" parent="1" source="CreditCard" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#b85450;strokeWidth=2;" target="Payment" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="1460" />
+              <mxPoint x="200" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_CC_Pay_lbl" parent="1" style="text;html=1;fontSize=9;fontStyle=2;strokeColor=none;fillColor=none;" value="extends" vertex="1">
+          <mxGeometry height="16" width="60" x="208" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="inh_Cash_Pay" edge="1" parent="1" source="CashPay" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#b85450;strokeWidth=2;" target="Payment" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="1460" />
+              <mxPoint x="530" y="1440" />
+              <mxPoint x="200" y="1440" />
+              <mxPoint x="200" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_OP_Pay" edge="1" parent="1" source="OnlinePay" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#b85450;strokeWidth=2;" target="Payment" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="1460" />
+              <mxPoint x="860" y="1440" />
+              <mxPoint x="200" y="1440" />
+              <mxPoint x="200" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_HKT_Task" edge="1" parent="1" source="HKTask" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#d79b00;strokeWidth=2;" target="Task" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1320" y="1460" />
+              <mxPoint x="1320" y="1440" />
+              <mxPoint x="1470" y="1440" />
+              <mxPoint x="1470" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inh_HKT_Task_lbl" parent="1" style="text;html=1;fontSize=9;fontStyle=2;strokeColor=none;fillColor=none;" value="extends" vertex="1">
+          <mxGeometry height="16" width="60" x="1350" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="inh_MT_Task" edge="1" parent="1" source="MaintTask" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=14;strokeColor=#d79b00;strokeWidth=2;" target="Task" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1760" y="1460" />
+              <mxPoint x="1760" y="1440" />
+              <mxPoint x="1470" y="1440" />
+              <mxPoint x="1470" y="1230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Room" edge="1" parent="1" source="Hotel" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamondThin;startFill=1;startSize=14;endArrow=open;endFill=0;endSize=8;strokeColor=#444444;strokeWidth=2;" target="Room" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="740" />
+              <mxPoint x="540" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Room_src" connectable="0" parent="comp_Hotel_Room" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Room_tgt" connectable="0" parent="comp_Hotel_Room" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Room_lbl" connectable="0" parent="comp_Hotel_Room" style="text;html=1;fontSize=10;fontStyle=3;" value="contains" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Address" edge="1" parent="1" source="Hotel" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamondThin;startFill=1;startSize=14;endArrow=open;endFill=0;endSize=8;strokeColor=#444444;strokeWidth=2;" target="Address" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="600" />
+              <mxPoint x="390" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Addr_src" connectable="0" parent="comp_Hotel_Address" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Addr_tgt" connectable="0" parent="comp_Hotel_Address" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Hotel_Addr_lbl" connectable="0" parent="comp_Hotel_Address" style="text;html=1;fontSize=10;fontStyle=3;" value="has" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Invoice" edge="1" parent="1" source="Reservation" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamondThin;startFill=1;startSize=14;endArrow=open;endFill=0;endSize=8;strokeColor=#444444;strokeWidth=2;" target="Invoice" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1580" y="770" />
+              <mxPoint x="1580" y="900" />
+              <mxPoint x="630" y="900" />
+              <mxPoint x="630" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Inv_src" connectable="0" parent="comp_Res_Invoice" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Inv_tgt" connectable="0" parent="comp_Res_Invoice" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Inv_lbl" connectable="0" parent="comp_Res_Invoice" style="text;html=1;fontSize=10;fontStyle=3;" value="generates" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Notif" edge="1" parent="1" source="Reservation" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamondThin;startFill=1;startSize=14;endArrow=open;endFill=0;endSize=8;strokeColor=#444444;strokeWidth=2;" target="Notification" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1580" y="770" />
+              <mxPoint x="1580" y="940" />
+              <mxPoint x="1060" y="940" />
+              <mxPoint x="1060" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Notif_src" connectable="0" parent="comp_Res_Notif" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Notif_tgt" connectable="0" parent="comp_Res_Notif" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_Res_Notif_lbl" connectable="0" parent="comp_Res_Notif" style="text;html=1;fontSize=10;fontStyle=3;" value="triggers" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Hotel_Staff" edge="1" parent="1" source="Hotel" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamondThin;startFill=0;startSize=14;endArrow=open;endFill=0;endSize=8;strokeColor=#444444;strokeWidth=2;" target="Staff" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="820" />
+              <mxPoint x="690" y="820" />
+              <mxPoint x="690" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Hotel_Staff_src" connectable="0" parent="agg_Hotel_Staff" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Hotel_Staff_tgt" connectable="0" parent="agg_Hotel_Staff" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Hotel_Staff_lbl" connectable="0" parent="agg_Hotel_Staff" style="text;html=1;fontSize=10;fontStyle=3;" value="employs" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Res_Payment" edge="1" parent="1" source="Reservation" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamondThin;startFill=0;startSize=14;endArrow=open;endFill=0;endSize=8;strokeColor=#444444;strokeWidth=2;" target="Payment" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1430" y="770" />
+              <mxPoint x="1430" y="870" />
+              <mxPoint x="200" y="870" />
+              <mxPoint x="200" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Res_Pay_src" connectable="0" parent="agg_Res_Payment" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Res_Pay_tgt" connectable="0" parent="agg_Res_Payment" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Res_Pay_lbl" connectable="0" parent="agg_Res_Payment" style="text;html=1;fontSize=10;fontStyle=3;" value="paid via" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Room_Task" edge="1" parent="1" source="Room" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamondThin;startFill=0;startSize=14;endArrow=open;endFill=0;endSize=8;strokeColor=#444444;strokeWidth=2;" target="Task" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="760" />
+              <mxPoint x="1010" y="860" />
+              <mxPoint x="1470" y="860" />
+              <mxPoint x="1470" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Room_Task_src" connectable="0" parent="agg_Room_Task" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Room_Task_tgt" connectable="0" parent="agg_Room_Task" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_Room_Task_lbl" connectable="0" parent="agg_Room_Task" style="text;html=1;fontSize=10;fontStyle=3;" value="has" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Guest_Res" edge="1" parent="1" source="Guest" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;endSize=8;strokeColor=#9673a6;strokeWidth=2;" target="Reservation" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="320" />
+              <mxPoint x="530" y="420" />
+              <mxPoint x="1580" y="420" />
+              <mxPoint x="1580" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Guest_Res_src" connectable="0" parent="ass_Guest_Res" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Guest_Res_tgt" connectable="0" parent="ass_Guest_Res" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Guest_Res_lbl" connectable="0" parent="ass_Guest_Res" style="text;html=1;fontSize=10;fontStyle=3;" value="makes" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Res_Room" edge="1" parent="1" source="Reservation" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;endSize=8;strokeColor=#82b366;strokeWidth=2;" target="Room" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1220" y="760" />
+              <mxPoint x="1220" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Res_Room_src" connectable="0" parent="ass_Res_Room" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Res_Room_tgt" connectable="0" parent="ass_Res_Room" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Res_Room_lbl" connectable="0" parent="ass_Res_Room" style="text;html=1;fontSize=10;fontStyle=3;" value="books" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Room_RT" edge="1" parent="1" source="Room" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;endSize=8;strokeColor=#82b366;strokeWidth=2;" target="RoomType" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="640" />
+              <mxPoint x="1070" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Room_RT_src" connectable="0" parent="ass_Room_RT" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1..*" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Room_RT_tgt" connectable="0" parent="ass_Room_RT" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Room_RT_lbl" connectable="0" parent="ass_Room_RT" style="text;html=1;fontSize=10;fontStyle=3;" value="isOf" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep_Inv_Pay" edge="1" parent="1" source="Invoice" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;dashed=1;strokeColor=#888888;strokeWidth=1.5;" target="Payment" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="1135" />
+              <mxPoint x="340" y="1135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep_Inv_Pay_lbl" connectable="0" parent="dep_Inv_Pay" style="text;html=1;fontSize=9;fontStyle=2;strokeColor=none;fillColor=none;" value="«uses»" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Staff_Res" edge="1" parent="1" source="Staff" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;endSize=8;strokeColor=#d6b656;strokeWidth=2;" target="Reservation" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="320" />
+              <mxPoint x="870" y="450" />
+              <mxPoint x="1580" y="450" />
+              <mxPoint x="1580" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Staff_Res_src" connectable="0" parent="ass_Staff_Res" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Staff_Res_tgt" connectable="0" parent="ass_Staff_Res" style="resizable=0;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="0.9" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_Staff_Res_lbl" connectable="0" parent="ass_Staff_Res" style="text;html=1;fontSize=10;fontStyle=3;" value="manages" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_HKStaff_HKTask" edge="1" parent="1" source="HKStaff" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;endSize=8;strokeColor=#d79b00;strokeWidth=2;" target="HKTask" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1930" y="290" />
+              <mxPoint x="1930" y="1700" />
+              <mxPoint x="1320" y="1700" />
+              <mxPoint x="1320" y="1670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ass_HKS_HKT_lbl" connectable="0" parent="ass_HKStaff_HKTask" style="text;html=1;fontSize=10;fontStyle=3;" value="assigned" vertex="1">
+          <mxGeometry relative="1" y="-12" as="geometry">
+            <mxPoint x="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
