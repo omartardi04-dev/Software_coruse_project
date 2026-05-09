@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel dx="1200" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="700" pageHeight="2000" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ======================================================= -->
+    <!--  STYLE NOTES:                                           -->
+    <!--  All state boxes: teal fill (#b2dfdb / #80cbc4),        -->
+    <!--  rounded=1, top half bold title, bottom sub-label       -->
+    <!-- ======================================================= -->
+
+    <!-- ===== START ===== -->
+    <mxCell id="start" value="" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="306" y="20" width="20" height="20" as="geometry" />
+    </mxCell>
+
+    <!-- ===== STATE: Room Available (top) ===== -->
+    <mxCell id="s_room_avail_top" value="&lt;b&gt;Room Available&lt;/b&gt;&lt;br&gt;Listed in search results" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="226" y="60" width="180" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Start → Room Available -->
+    <mxCell id="t_start" value="" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#000000;" edge="1" parent="1" source="start" target="s_room_avail_top">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- ===== STATE: Search In Progress ===== -->
+    <mxCell id="s_search" value="&lt;b&gt;Search In Progress&lt;/b&gt;&lt;br&gt;Filter dates, type, price" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="170" y="165" width="180" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Room Available → Search In Progress [Customer searches] -->
+    <mxCell id="t1" value="Customer searches" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_room_avail_top" target="s_search">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="260" y="135" />
+          <mxPoint x="260" y="165" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Search Failed ===== -->
+    <mxCell id="s_search_fail" value="&lt;b&gt;Search Failed&lt;/b&gt;&lt;br&gt;No matching rooms" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="380" y="260" width="160" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Search In Progress → Search Failed [No rooms found] -->
+    <mxCell id="t_no_rooms" value="No rooms found" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_search" target="s_search_fail">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="350" y="285" />
+          <mxPoint x="380" y="285" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Search Failed → Room Available [Modify search] -->
+    <mxCell id="t_modify" value="Modify search" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="s_search_fail" target="s_room_avail_top">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="590" y="285" />
+          <mxPoint x="590" y="85" />
+          <mxPoint x="406" y="85" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Reservation Pending ===== -->
+    <mxCell id="s_res_pending" value="&lt;b&gt;Reservation Pending&lt;/b&gt;&lt;br&gt;Guest enters details" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="80" y="260" width="180" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Search In Progress → Reservation Pending [Room selected] -->
+    <mxCell id="t_room_sel" value="Room selected" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_search" target="s_res_pending">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="200" y="285" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Payment Processing ===== -->
+    <mxCell id="s_pay_proc" value="&lt;b&gt;Payment Processing&lt;/b&gt;&lt;br&gt;Gateway validates card" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="210" y="365" width="190" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Reservation Pending → Payment Processing [Proceed to payment] -->
+    <mxCell id="t_proceed_pay" value="Proceed to payment" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_res_pending" target="s_pay_proc">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="170" y="335" />
+          <mxPoint x="305" y="335" />
+          <mxPoint x="305" y="365" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Payment Failed ===== -->
+    <mxCell id="s_pay_fail" value="&lt;b&gt;Payment Failed&lt;/b&gt;&lt;br&gt;Card declined / error" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="50" y="465" width="170" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Payment Processing → Payment Failed [Payment declined] -->
+    <mxCell id="t_pay_declined" value="Payment declined" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_pay_proc" target="s_pay_fail">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="210" y="415" />
+          <mxPoint x="135" y="415" />
+          <mxPoint x="135" y="465" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Payment Failed → Reservation Pending [Retry payment] -->
+    <mxCell id="t_retry" value="Retry payment" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_pay_fail" target="s_res_pending">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="50" y="490" />
+          <mxPoint x="30" y="490" />
+          <mxPoint x="30" y="285" />
+          <mxPoint x="80" y="285" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Booking Confirmed ===== -->
+    <mxCell id="s_confirmed" value="&lt;b&gt;Booking Confirmed&lt;/b&gt;&lt;br&gt;Email sent · Room blocked" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="220" y="465" width="190" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Payment Processing → Booking Confirmed [Authorised] -->
+    <mxCell id="t_authorised" value="Authorised" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_pay_proc" target="s_confirmed">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="340" y="440" />
+          <mxPoint x="340" y="465" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Booking Cancelled ===== -->
+    <mxCell id="s_cancelled" value="&lt;b&gt;Booking Cancelled&lt;/b&gt;&lt;br&gt;Refund initiated" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="460" y="565" width="170" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Booking Confirmed → Booking Cancelled [Guest cancels] -->
+    <mxCell id="t_guest_cancels" value="Guest cancels" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_confirmed" target="s_cancelled">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="410" y="490" />
+          <mxPoint x="545" y="490" />
+          <mxPoint x="545" y="565" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Booking Cancelled → Room Available (top) [Room released] -->
+    <mxCell id="t_room_released" value="Room released" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="s_cancelled" target="s_room_avail_top">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="650" y="590" />
+          <mxPoint x="650" y="85" />
+          <mxPoint x="406" y="85" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Awaiting Check-In ===== -->
+    <mxCell id="s_await_checkin" value="&lt;b&gt;Awaiting Check-In&lt;/b&gt;&lt;br&gt;Front desk notified" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="205" y="565" width="180" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Booking Confirmed → Awaiting Check-In [Arrival date reached] -->
+    <mxCell id="t_arrival" value="Arrival date reached" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_confirmed" target="s_await_checkin">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="315" y="530" />
+          <mxPoint x="295" y="530" />
+          <mxPoint x="295" y="565" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Checked In (Occupied) ===== -->
+    <mxCell id="s_checkedin" value="&lt;b&gt;Checked In (Occupied)&lt;/b&gt;&lt;br&gt;Key issued · Room active" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="205" y="670" width="200" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Awaiting Check-In → Checked In [Staff checks in guest] -->
+    <mxCell id="t_checkin" value="Staff checks in guest" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_await_checkin" target="s_checkedin">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="295" y="640" />
+          <mxPoint x="305" y="640" />
+          <mxPoint x="305" y="670" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Under Maintenance ===== -->
+    <mxCell id="s_maintenance" value="&lt;b&gt;Under Maintenance&lt;/b&gt;&lt;br&gt;Staff assigned to fix" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="60" y="780" width="170" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Checked In → Under Maintenance [Issue reported] -->
+    <mxCell id="t_issue_reported" value="Issue reported" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_checkedin" target="s_maintenance">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="240" y="745" />
+          <mxPoint x="145" y="745" />
+          <mxPoint x="145" y="780" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Under Maintenance → Checked In [Issue resolved] -->
+    <mxCell id="t_issue_resolved" value="Issue resolved" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_maintenance" target="s_checkedin">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="195" y="805" />
+          <mxPoint x="240" y="805" />
+          <mxPoint x="240" y="745" />
+          <mxPoint x="255" y="745" />
+          <mxPoint x="255" y="720" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Checkout In Progress ===== -->
+    <mxCell id="s_checkout_prog" value="&lt;b&gt;Checkout In Progress&lt;/b&gt;&lt;br&gt;Bill generated · Key returned" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="280" y="780" width="210" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Checked In → Checkout In Progress [Departure date / request] -->
+    <mxCell id="t_departure" value="Departure date / request" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_checkedin" target="s_checkout_prog">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="370" y="745" />
+          <mxPoint x="385" y="745" />
+          <mxPoint x="385" y="780" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Billing Dispute ===== -->
+    <mxCell id="s_dispute" value="&lt;b&gt;Billing Dispute&lt;/b&gt;&lt;br&gt;Staff reviews charges" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="175" y="890" width="175" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Checkout In Progress → Billing Dispute [Dispute raised] -->
+    <mxCell id="t_dispute_raised" value="Dispute raised" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_checkout_prog" target="s_dispute">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="320" y="855" />
+          <mxPoint x="262" y="855" />
+          <mxPoint x="262" y="890" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Billing Dispute → Checkout In Progress [Resolved] -->
+    <mxCell id="t_dispute_resolved" value="Resolved" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_dispute" target="s_checkout_prog">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="300" y="915" />
+          <mxPoint x="350" y="915" />
+          <mxPoint x="350" y="855" />
+          <mxPoint x="370" y="855" />
+          <mxPoint x="370" y="830" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Checked Out ===== -->
+    <mxCell id="s_checkedout" value="&lt;b&gt;Checked Out&lt;/b&gt;&lt;br&gt;Receipt emailed to guest" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="390" y="890" width="180" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Checkout In Progress → Checked Out [Payment settled] -->
+    <mxCell id="t_pay_settled" value="Payment settled" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_checkout_prog" target="s_checkedout">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="450" y="855" />
+          <mxPoint x="480" y="855" />
+          <mxPoint x="480" y="890" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Housekeeping ===== -->
+    <mxCell id="s_housekeeping" value="&lt;b&gt;Housekeeping&lt;/b&gt;&lt;br&gt;Cleaning · Inventory check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="335" y="1000" width="195" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Checked Out → Housekeeping [Auto-assigned] -->
+    <mxCell id="t_auto_assign" value="Auto-assigned" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_checkedout" target="s_housekeeping">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="480" y="965" />
+          <mxPoint x="432" y="965" />
+          <mxPoint x="432" y="1000" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Room Inspected ===== -->
+    <mxCell id="s_inspected" value="&lt;b&gt;Room Inspected&lt;/b&gt;&lt;br&gt;Supervisor sign-off" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="340" y="1110" width="185" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Housekeeping → Room Inspected [Cleaning complete] -->
+    <mxCell id="t_clean_complete" value="Cleaning complete" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_housekeeping" target="s_inspected">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="400" y="1075" />
+          <mxPoint x="390" y="1075" />
+          <mxPoint x="390" y="1110" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Room Inspected → Housekeeping [Re-clean required] -->
+    <mxCell id="t_reclean" value="Re-clean required" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_inspected" target="s_housekeeping">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="490" y="1135" />
+          <mxPoint x="520" y="1135" />
+          <mxPoint x="520" y="1025" />
+          <mxPoint x="530" y="1025" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== STATE: Room Available (bottom) ===== -->
+    <mxCell id="s_room_avail_bot" value="&lt;b&gt;Room Available&lt;/b&gt;&lt;br&gt;Ready for next booking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#4db6ac;fontSize=11;verticalAlign=middle;arcSize=15;" vertex="1" parent="1">
+      <mxGeometry x="333" y="1220" width="195" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- Room Inspected → Room Available (bot) [Approved] -->
+    <mxCell id="t_approved" value="Approved" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#555555;fontSize=10;" edge="1" parent="1" source="s_inspected" target="s_room_avail_bot">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="432" y="1185" />
+          <mxPoint x="430" y="1185" />
+          <mxPoint x="430" y="1220" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ===== END ===== -->
+    <mxCell id="end" value="" style="ellipse;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;strokeWidth=3;" vertex="1" parent="1">
+      <mxGeometry x="421" y="1295" width="20" height="20" as="geometry" />
+    </mxCell>
+    <!-- Inner filled circle for end state -->
+    <mxCell id="end_inner" value="" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+      <mxGeometry x="427" y="1301" width="8" height="8" as="geometry" />
+    </mxCell>
+
+    <!-- Room Available (bot) → End -->
+    <mxCell id="t_end" value="" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#000000;" edge="1" parent="1" source="s_room_avail_bot" target="end">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="431" y="1285" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
