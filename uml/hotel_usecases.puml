@@ -1,0 +1,284 @@
+' ============================================================
+' DIAGRAM 1 — Online Reservation (Guest-Facing)
+' ============================================================
+
+@startuml Diagram1_OnlineReservation
+title Hotel Reservation System\n<b>Diagram 1: Online Reservation (Guest-Facing)</b>
+
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam ArrowColor #2C3E50
+skinparam ActorBorderColor #2C3E50
+skinparam ActorBackgroundColor #D6EAF8
+skinparam UsecaseBorderColor #2874A6
+skinparam UsecaseBackgroundColor #EBF5FB
+skinparam UsecaseArrowColor #2C3E50
+
+actor "Guest / Customer" as Guest
+actor "Payment Gateway" as PG
+actor "Email Service" as ES
+
+rectangle "Online Reservation" {
+
+  usecase "Register Account" as UC_REG
+  usecase "Login" as UC_LOGIN
+  usecase "Search Available Rooms" as UC_SEARCH
+  usecase "View Room Details" as UC_VIEW
+  usecase "Make Reservation" as UC_BOOK
+  usecase "Apply Promo Code" as UC_PROMO
+  usecase "Make Online Payment" as UC_PAY
+  usecase "Send Confirmation Email" as UC_EMAIL
+  usecase "Modify Reservation" as UC_MODIFY
+  usecase "Cancel Reservation" as UC_CANCEL
+  usecase "View Booking History" as UC_HISTORY
+  usecase "Submit Review" as UC_REVIEW
+
+}
+
+' Guest interactions
+Guest --> UC_REG
+Guest --> UC_LOGIN
+Guest --> UC_SEARCH
+Guest --> UC_VIEW
+Guest --> UC_BOOK
+Guest --> UC_MODIFY
+Guest --> UC_CANCEL
+Guest --> UC_HISTORY
+Guest --> UC_REVIEW
+
+' Include relationships
+UC_BOOK ..> UC_SEARCH    : <<include>>
+UC_BOOK ..> UC_PAY       : <<include>>
+UC_BOOK ..> UC_EMAIL     : <<include>>
+UC_MODIFY ..> UC_LOGIN   : <<include>>
+UC_CANCEL ..> UC_LOGIN   : <<include>>
+UC_HISTORY ..> UC_LOGIN  : <<include>>
+
+' Extend relationships
+UC_PROMO ..> UC_BOOK     : <<extend>>
+
+' External systems
+UC_PAY   --> PG
+UC_EMAIL --> ES
+
+@enduml
+
+
+' ============================================================
+' DIAGRAM 2 — Front-Desk Operations
+' ============================================================
+
+@startuml Diagram2_FrontDesk
+title Hotel Reservation System\n<b>Diagram 2: Front-Desk Operations</b>
+
+left to right direction
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam ArrowColor #2C3E50
+skinparam ActorBorderColor #2C3E50
+skinparam ActorBackgroundColor #D5F5E3
+skinparam UsecaseBorderColor #1E8449
+skinparam UsecaseBackgroundColor #EAFAF1
+skinparam UsecaseArrowColor #2C3E50
+
+actor "Receptionist" as REC
+actor "Payment Gateway" as PG
+actor "Email Service" as ES
+
+rectangle "Front-Desk Operations" {
+
+  usecase "Check-in Guest" as UC_CI
+  usecase "Verify Reservation" as UC_VERIF
+  usecase "Assign / Reassign Room" as UC_ASSIGN
+  usecase "Check-out Guest" as UC_CO
+  usecase "Generate Invoice" as UC_INV
+  usecase "Process On-site Payment" as UC_PAY
+  usecase "Walk-in Reservation" as UC_WALK
+  usecase "Search Available Rooms" as UC_SEARCH
+  usecase "Record Guest Information" as UC_RECORD
+  usecase "Handle Special Requests" as UC_SPECIAL
+  usecase "Early Check-in" as UC_EARLY
+  usecase "Late Check-out" as UC_LATE
+  usecase "Send Confirmation Email" as UC_EMAIL
+
+}
+
+' Receptionist interactions
+REC --> UC_CI
+REC --> UC_CO
+REC --> UC_WALK
+REC --> UC_RECORD
+REC --> UC_SPECIAL
+REC --> UC_EARLY
+REC --> UC_LATE
+
+' Include relationships
+UC_CI   ..> UC_VERIF   : <<include>>
+UC_CI   ..> UC_ASSIGN  : <<include>>
+UC_CI   ..> UC_RECORD  : <<include>>
+UC_CO   ..> UC_INV     : <<include>>
+UC_CO   ..> UC_PAY     : <<include>>
+UC_CO   ..> UC_EMAIL   : <<include>>
+UC_WALK ..> UC_SEARCH  : <<include>>
+UC_WALK ..> UC_RECORD  : <<include>>
+
+' Extend relationships
+UC_EARLY ..> UC_CI     : <<extend>>
+UC_LATE  ..> UC_CO     : <<extend>>
+
+' External systems
+UC_PAY   --> PG
+UC_EMAIL --> ES
+
+@enduml
+
+
+' ============================================================
+' DIAGRAM 3 — Hotel Management (Admin)
+' ============================================================
+
+@startuml Diagram3_HotelManagement
+title Hotel Reservation System\n<b>Hotel Management (Admin)</b>
+
+left to right direction
+
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam ArrowColor      #2C3E50
+skinparam ActorBorderColor     #2C3E50
+skinparam ActorBackgroundColor #FDEBD0
+skinparam UsecaseBorderColor   #CA6F1E
+skinparam UsecaseBackgroundColor #FEF9E7
+skinparam UsecaseArrowColor    #2C3E50
+skinparam PackageBorderColor   #CA6F1E
+skinparam PackageBackgroundColor #FFFBF2
+
+actor "Hotel Manager\n/ Admin" as MGR
+
+rectangle "Hotel Management" {
+
+  package "Room & Pricing Management" {
+    usecase "Manage Room Inventory\n(Add / Edit / Remove)" as UC_ROOMS
+    usecase "Manage Room Types & Rates"       as UC_RATES
+    usecase "Manage Promotions\n& Discount Codes" as UC_PROMO
+  }
+
+  package "Staff & Configuration" {
+    usecase "Manage Staff Accounts"    as UC_STAFF
+    usecase "Configure Hotel Settings" as UC_CONFIG
+  }
+
+  package "Reporting" {
+    usecase "Generate Summary Report" as UC_SUMM
+    usecase "View Occupancy Reports"  as UC_OCC
+    usecase "View Revenue Reports"    as UC_REV
+    usecase "View Guest Statistics"   as UC_GSTAT
+  }
+
+  package "Audit" {
+    usecase "Audit Transactions" as UC_AUDIT
+  }
+
+}
+
+' Manager associations
+MGR --> UC_ROOMS
+MGR --> UC_RATES
+MGR --> UC_PROMO
+MGR --> UC_STAFF
+MGR --> UC_CONFIG
+MGR --> UC_SUMM
+MGR --> UC_AUDIT
+
+' Include relationships
+UC_SUMM ..> UC_OCC   : <<include>>
+UC_SUMM ..> UC_REV   : <<include>>
+UC_SUMM ..> UC_GSTAT : <<include>>
+
+' Extend relationship
+UC_RATES ..> UC_ROOMS : <<extend>>
+
+@enduml
+
+
+' ============================================================
+' DIAGRAM 4 — Housekeeping & Maintenance
+' ============================================================
+
+
+@startuml Diagram4_HousekeepingMaintenance
+title Hotel Reservation System\n<b>Housekeeping & Maintenance</b>
+
+left to right direction
+
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam ArrowColor             #2C3E50
+skinparam ActorBorderColor       #2C3E50
+skinparam ActorBackgroundColor   #F9EBEA
+skinparam UsecaseBorderColor     #922B21
+skinparam UsecaseBackgroundColor #FDEDEC
+skinparam UsecaseArrowColor      #2C3E50
+skinparam PackageBorderColor     #922B21
+skinparam PackageBackgroundColor #FEF5F5
+
+actor "Housekeeping\nStaff" as HK
+actor "Receptionist"        as REC
+
+' Hidden link forces REC to render BELOW HK,
+' so HK's arrow to UC_REPORT (which is lower) exits from the bottom,
+' and the arrow to UC_REPORT exits from top of HK toward the Maintenance package
+HK -[hidden]down-> REC
+
+rectangle "Housekeeping & Maintenance" {
+
+  package "Housekeeping" {
+    usecase "View Cleaning Schedule"                         as UC_SCHED
+    usecase "Inspect Room Quality"                           as UC_INSPECT
+    usecase "Update Room Status\n(Dirty / Cleaning / Ready)" as UC_STATUS
+    usecase "Notify Room Ready"                              as UC_NOTIFY
+    usecase "Request Inventory Restock"                      as UC_RESTOCK
+  }
+
+  package "Maintenance" {
+    usecase "Report Maintenance Issue"  as UC_REPORT
+    usecase "Assign Maintenance Task"   as UC_ASSIGN
+    usecase "Update Maintenance Status" as UC_MSTATUS
+
+    actor "Maintenance\nStaff" as MNT
+  }
+
+}
+
+actor "Inventory\nModule" as INV
+
+' Housekeeping interactions
+HK --> UC_SCHED
+HK --> UC_INSPECT
+HK --> UC_RESTOCK
+
+' This arrow exits from the top of HK upward toward Maintenance package
+HK -up-> UC_REPORT
+
+' Receptionist interactions
+REC --> UC_REPORT
+REC --> UC_ASSIGN
+
+' Maintenance Staff interactions
+MNT --> UC_MSTATUS
+MNT --> UC_REPORT
+
+' External system
+UC_RESTOCK --> INV
+
+' Include relationships
+UC_INSPECT ..> UC_STATUS : <<include>>
+UC_STATUS  ..> UC_NOTIFY : <<include>>
+UC_ASSIGN  ..> UC_REPORT : <<include>>
+
+' Extend relationships
+UC_RESTOCK ..> UC_STATUS : <<extend>>
+
+@enduml
+
